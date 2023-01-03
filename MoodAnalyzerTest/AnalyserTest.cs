@@ -1,22 +1,30 @@
 using MoodAnalyser;
-namespace MoodAnalyzerTest
+namespace AnalyzerTest
 {
     [TestClass]
     public class AnalyserTest
     {
         [TestMethod]
-        public void GivenMessageWhenAnalyzeShouldReturnSadMood()
+        public void GivenSadMessageWhenAnalyzeShouldReturnSadMood()
         {
-            MoodAnalyzer obj = new MoodAnalyzer("I am in sad mood.");
-            String actualResult = obj.analyseMood();
-            Assert.AreEqual("sad", actualResult);
+            //Arrange
+            string message = "I'm in Sad Mood";
+            //Act
+            MoodAnalyzer analyser = new MoodAnalyzer(message);
+            string actual = analyser.analyseMood();
+            //Assert
+            Assert.AreEqual(actual, "HAPPY");
         }
         [TestMethod]
-        public void GivenAnyMessageWhenAnalyzeShouldReturnHappyMood()
+        public void GivenHappyMessageWhenAnalyzeShouldReturnHappyMood()
         {
-            MoodAnalyzer obj = new MoodAnalyzer("I am in any mood.");
-            String actualResult = obj.analyseMood();
-            Assert.AreEqual("happy", actualResult);
+            //Arrange
+            string message = "I'm in Happy Mood";
+            //Act
+            MoodAnalyzer analyser = new MoodAnalyzer(message);
+            string actual = analyser.analyseMood();
+            //Assert
+            Assert.AreEqual(actual, "HAPPY");
         }
     }
 }
