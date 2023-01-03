@@ -1,4 +1,4 @@
-using MoodAnalyzer;
+using MoodAnalyser;
 namespace MoodAnalyzerTest
 {
     [TestClass]
@@ -7,25 +7,16 @@ namespace MoodAnalyzerTest
         [TestMethod]
         public void GivenMessageWhenAnalyzeShouldReturnSadMood()
         {
-            //Arrange
-            string message = "I am in Sad Mood";
-            //Act
-            MoodAnalyser analyser = new MoodAnalyser(message);
-            string actual = analyser.AnalyzeMood();
-            //Assert
-            Assert.AreEqual(actual, "Sad");
-        
+            MoodAnalyzer obj = new MoodAnalyzer("I am in sad mood.");
+            String actualResult = obj.analyseMood();
+            Assert.AreEqual("sad", actualResult);
         }
         [TestMethod]
         public void GivenAnyMessageWhenAnalyzeShouldReturnHappyMood()
         {
-            //Arrange
-            string message = "I am in Any Mood";
-            //Act
-            MoodAnalyser analyser = new MoodAnalyser(message);
-            string actual = analyser.AnalyzeMood();
-            //Assert
-            Assert.AreEqual(actual, "Happy");
+            MoodAnalyzer obj = new MoodAnalyzer("I am in any mood.");
+            String actualResult = obj.analyseMood();
+            Assert.AreEqual("happy", actualResult);
         }
     }
 }

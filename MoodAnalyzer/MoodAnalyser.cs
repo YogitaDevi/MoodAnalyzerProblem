@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyzer
+namespace MoodAnalyser
 {
-    public class MoodAnalyser
+    public class MoodAnalyzer
     {
-        string input;
-        public MoodAnalyser(string input)
+        private string message;
+        
+        public MoodAnalyzer(string message) 
         {
-            this.input = input;
+            this.message = message;
         }
-
-        public string AnalyzeMood()
+        public string analyseMood()
         {
-            if (this.input.ToLower().Contains("sad"))
-                return "Sad";
-            return "Happy";
+            if (this.message.ToLower().Contains("sad"))
+                return "sad";
+            else
+                return "happy";
         }
     }
 }
