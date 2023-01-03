@@ -8,7 +8,7 @@ namespace AnalyzerTest
         public void GivenSadMessageWhenAnalyzeShouldReturnSadMood()
         {
             //Arrange
-            string message = "I'm in Sad Mood";
+            string message = " ";
             //Act
             MoodAnalyzer analyser = new MoodAnalyzer(message);
             string actual = analyser.analyseMood();
@@ -19,7 +19,7 @@ namespace AnalyzerTest
         public void GivenHappyMessageWhenAnalyzeShouldReturnHappyMood()
         {
             //Arrange
-            string message = "I'm in Happy Mood";
+            string message = " ";
             //Act
             MoodAnalyzer analyser = new MoodAnalyzer(message);
             string actual = analyser.analyseMood();

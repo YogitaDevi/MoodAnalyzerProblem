@@ -25,15 +25,15 @@ namespace MoodAnalyser
                     return "SAD";
                 else
                     if (message.Equals(" "))
-                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.Empty_Message, "Mood should not be Empty");
+                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.EMPTY, "Empty Mood");
                 else if (message.Equals(null))
-                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.Null_Message, "Mood should not be Null");
+                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
                 else
                     return "HAPPY";
             }
             catch (NullReferenceException)
             {
-                throw new CustomException(MoodAnalyser.CustomException.ExceptionType.Null_Message, "Mood should not be Null");
+                throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
             }
             catch (Exception ex)
             {
