@@ -26,5 +26,32 @@ namespace AnalyzerTest
             //Assert
             Assert.AreEqual(actual, "HAPPY");
         }
+         [TestMethod]
+        public void GivenNullMoodWhenAnalyseShouldThrowMoodAnalysisException()
+        {
+            try
+            {        
+                Analyser mood = new Analyser("null");
+                string actual = mood.analyseMood();
+            }
+            catch (CustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Mood Analysis Exception", e.Message);
+            }
+        }
+         [TestMethod]
+        public void GivenEMPTYMoodWhenAnalyseShouldThrowMoodAnalysisException()
+        {
+            try
+            {
+                Analyser mood = new Analyser("");
+                string actual = mood.analyseMood();
+            }
+             catch (CustomException e)
+            {
+                Assert.AreEqual("Empty Mood", e.Message);
+            }
+        }
     }
 }
