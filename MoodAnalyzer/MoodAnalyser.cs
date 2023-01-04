@@ -39,10 +39,6 @@ namespace MoodAnalyser
             {
                 throw new Exception(ex.Message);
             }
-            finally
-            {
-
-            }
         }
     }
 }
