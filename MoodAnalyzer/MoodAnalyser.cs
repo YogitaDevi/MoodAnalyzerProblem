@@ -20,23 +20,26 @@ namespace MoodAnalyser
             this.message = message;
         }
 
-        public object CustomException { get; private set; }
-
         public string analyseMood()
         {
             try
             {
-                if (this.message.ToLower().Contains("Sad"))
-                    return "SAD";
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not be Empty");
+                }
+                if (this.message.Contains("Sad"))
+                {
+                    return "Sad";
+                }
                 else
-                    if (message.Equals(" "))
-                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.EMPTY, "Empty Mood");          
-                else
+                {
                     return "HAPPY";
+                }
             }
             catch (NullReferenceException)
             {
-                throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
+                throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL_MESSAGE, "Mood should not be null");
             }
         }
     }

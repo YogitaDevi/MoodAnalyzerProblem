@@ -11,10 +11,7 @@ namespace MoodAnalyser
             NO_SUCH_CLASS,
             NO_SUCH_METHOD,
             EMPTY_MESSAGE,
-            NULL_MESSAGE,
-            NO_SUCH_CONSTRUCTOR,
-            NO_SUCH_FIELD,
-            NO_NULL_TYPE
+            NULL_MESSAGE,           
         }
         public ExceptionType type;
         public static object expected;
