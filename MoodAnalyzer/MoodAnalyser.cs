@@ -34,12 +34,7 @@ namespace MoodAnalyser
             catch (NullReferenceException)
             {
                 throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
+            }           
         }
     }
 }
