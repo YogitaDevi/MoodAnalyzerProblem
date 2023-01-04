@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyser
 {
-    public class MoodAnalyzer
+    public class Analyser
     {
         private string message;
-        public MoodAnalyzer(string message)
+        public Analyser(string message)
         {
             this.message = message;
         }
@@ -26,8 +26,6 @@ namespace MoodAnalyser
                 else
                     if (message.Equals(" "))
                     throw new CustomException(MoodAnalyser.CustomException.ExceptionType.EMPTY, "Empty Mood");
-                else if (message.Equals(null))
-                    throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
                 else
                     return "HAPPY";
             }
@@ -35,11 +33,7 @@ namespace MoodAnalyser
             {
                 throw new CustomException(MoodAnalyser.CustomException.ExceptionType.NULL, "Mood Analysis Exception");
             }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
+           
         }
     }
 }
